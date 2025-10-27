@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سورة البقرة - آيات ٢٩-٣٧ | Surah Al-Baqarah - Verses 29-37</title>
+    <link rel="icon" type="image/jpeg" href="https://i.imgur.com/PyuoJ6E.jpeg">
+    <link rel="apple-touch-icon" href="https://i.imgur.com/PyuoJ6E.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Amiri:wght@400;700&family=Lato:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.8;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            padding-top: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            min-width: 120px;
+            text-align: center;
+        }
+
+        .nav-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-family: 'Amiri Quran', serif;
+            color: #8b4513;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+
+        .chapter-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-label {
+            color: #8b4513;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-value {
+            color: #333;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-top: 5px;
+        }
+
+        .audio-player-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .audio-player-section h3 {
+            color: #8b4513;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .audio-player-section p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .audio-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 25px;
+            outline: none;
+            height: 54px;
+        }
+
+        audio::-webkit-media-controls-panel {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+        }
+
+        audio:focus {
+            outline: 2px solid #8b4513;
+            outline-offset: 2px;
+        }
+
+        .reciter-info {
+            font-family: 'Amiri', serif;
+            color: #8b4513;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .verse-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .verse-btn {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+        }
+
+        .verse-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(139, 69, 19, 0.3);
+        }
+
+        .verse-btn.active {
+            background: linear-gradient(45deg, #a0522d, #8b4513);
+            box-shadow: 0 8px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .verses-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .verse {
+            margin-bottom: 35px;
+            padding: 20px;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.03) 0%, rgba(160, 82, 45, 0.03) 100%);
+            border-radius: 10px;
+            border-left: 4px solid #8b4513;
+        }
+
+        .verse-number {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .arabic-text {
+            font-family: 'Amiri Quran', serif;
+            font-size: 1.6rem;
+            color: #2c3e50;
+            line-height: 2.2;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            direction: rtl;
+            text-align: right;
+        }
+
+        .english-text {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.8;
+            direction: ltr;
+            text-align: left;
+            padding: 15px;
+            background: rgba(240, 248, 255, 0.7);
+            border-radius: 8px;
+        }
+
+        .reflection-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .reflection-section h2 {
+            color: #8b4513;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #8b4513;
+        }
+
+        .reflection-point {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.03) 0%, rgba(160, 82, 45, 0.03) 100%);
+            border-radius: 10px;
+            border-left: 5px solid #8b4513;
+        }
+
+        .reflection-point h3 {
+            color: #8b4513;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+
+        .reflection-arabic {
+            font-family: 'Amiri', serif;
+            color: #2c3e50;
+            font-size: 1.1rem;
+            line-height: 2;
+            margin-bottom: 20px;
+            direction: rtl;
+            text-align: right;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+        }
+
+        .reflection-english {
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.9;
+            direction: ltr;
+            text-align: left;
+            padding: 15px;
+            background: rgba(240, 248, 255, 0.7);
+            border-radius: 8px;
+        }
+
+        .footer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .footer-text {
+            color: #8b4513;
+            font-size: 1.1rem;
+            margin: 12px 0;
+            font-weight: 500;
+        }
+
+        .footer-text:nth-child(2) {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .footer-text:nth-child(3),
+        .footer-text:nth-child(4) {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .signature {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .signature-header {
+            color: #8b4513;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .signature-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .signature-profile {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .signature-info {
+            text-align: left;
+        }
+
+        .signature-name {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .signature-company {
+            color: #8b4513;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .signature-description {
+            color: #666;
+            font-size: 0.9rem;
+            max-width: 300px;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .signature-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .signature-btn {
+            background: linear-gradient(45deg, #8b4513, #a0522d);
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .signature-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
+        }
+
+        .signature-copyright {
+            color: #999;
+            font-size: 0.85rem;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .chapter-info {
+                gap: 15px;
+            }
+
+            .verses-container,
+            .reflection-section,
+            .footer,
+            .signature {
+                padding: 20px;
+            }
+
+            .arabic-text {
+                font-size: 1.4rem;
+            }
+
+            .english-text {
+                font-size: 0.95rem;
+            }
+
+            .reflection-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .verse-btn {
+                padding: 8px 14px;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.6rem;
+            }
+
+            .header p {
+                font-size: 0.95rem;
+            }
+
+            .arabic-text {
+                font-size: 1.2rem;
+                line-height: 1.9;
+            }
+
+            .english-text {
+                font-size: 0.9rem;
+                line-height: 1.7;
+            }
+
+            .footer-text {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <a href="#" class="nav-link">← Previous Verse</a>
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">Next Verse →</a>
+        </div>
+
+        <div class="header">
+            <h1>سورة البقرة</h1>
+            <p>Surah Al-Baqarah | The Cow</p>
+            <p>The Second Chapter of the Qur'an</p>
+            
+            <div class="chapter-info">
+                <div class="info-item">
+                    <div class="info-label">Verses Displayed</div>
+                    <div class="info-value">29 - 37</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Chapter Number</div>
+                    <div class="info-value">2</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Topic</div>
+                    <div class="info-value">Creation of Adam</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="audio-player-section">
+            <h3>🎵 Quranic Recitation | تلاوة قرآنية</h3>
+            <p>القارئ: عبد الباسط عبد الصمد | Reciter: Abdul Basit Abdus Samad</p>
+            
+            <div class="audio-controls">
+                <audio id="quranAudio" controls>
+                    <source id="audioSource" src="https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002029.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                
+                <div class="verse-selector">
+                    <button class="verse-btn" style="background: linear-gradient(45deg, #2ecc71, #27ae60); font-weight: 700;" onclick="playAllVerses()">▶ Play All Verses</button>
+                    <button class="verse-btn active" onclick="playVerse(29)">Verse 29</button>
+                    <button class="verse-btn" onclick="playVerse(30)">Verse 30</button>
+                    <button class="verse-btn" onclick="playVerse(31)">Verse 31</button>
+                    <button class="verse-btn" onclick="playVerse(32)">Verse 32</button>
+                    <button class="verse-btn" onclick="playVerse(33)">Verse 33</button>
+                    <button class="verse-btn" onclick="playVerse(34)">Verse 34</button>
+                    <button class="verse-btn" onclick="playVerse(35)">Verse 35</button>
+                    <button class="verse-btn" onclick="playVerse(36)">Verse 36</button>
+                    <button class="verse-btn" onclick="playVerse(37)">Verse 37</button>
+                </div>
+                
+                <div class="reciter-info">
+                    بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ
+                </div>
+            </div>
+        </div>
+
+        <div class="verses-container">
+            <div class="verse">
+                <span class="verse-number">Verse 29</span>
+                <div class="arabic-text">
+                    هُوَ ٱلَّذِى خَلَقَ لَكُم مَّا فِى ٱلْأَرْضِ جَمِيعًۭا ثُمَّ ٱسْتَوَىٰ إِلَى ٱلسَّمَآءِ فَسَوَّىٰهُنَّ سَبْعَ سَمَٰوَٰتٍۢ ۚ وَهُوَ بِكُلِّ شَىْءٍ عَلِيمٌۭ
+                </div>
+                <div class="english-text">
+                    It is He who created for you all that is on earth. Then He directed Himself to the heaven, and made them seven heavens, and He is Knowing of all things.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 30</span>
+                <div class="arabic-text">
+                    وَإِذْ قَالَ رَبُّكَ لِلْمَلَٰٓئِكَةِ إِنِّى جَاعِلٌۭ فِى ٱلْأَرْضِ خَلِيفَةًۭ ۖ قَالُوٓا۟ أَتَجْعَلُ فِيهَا مَن يُفْسِدُ فِيهَا وَيَسْفِكُ ٱلدِّمَآءَ وَنَحْنُ نُسَبِّحُ بِحَمْدِكَ وَنُقَدِّسُ لَكَ ۖ قَالَ إِنِّىٓ أَعْلَمُ مَا لَا تَعْلَمُونَ
+                </div>
+                <div class="english-text">
+                    And [mention, O Muhammad], when your Lord said to the angels, "Indeed, I will make upon the earth a successive authority." They said, "Will You place upon it one who causes corruption therein and sheds blood, while we declare Your praises and sanctify You?" Allah said, "Indeed, I know that which you do not know."
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 31</span>
+                <div class="arabic-text">
+                    وَعَلَّمَ ءَادَمَ ٱلْأَسْمَآءَ كُلَّهَا ثُمَّ عَرَضَهُمْ عَلَى ٱلْمَلَٰٓئِكَةِ فَقَالَ أَنۢبِـُٔونِى بِأَسْمَآءِ هَـٰٓؤُلَآءِ إِن كُنتُمْ صَٰدِقِينَ
+                </div>
+                <div class="english-text">
+                    And He taught Adam the names - all of them. Then He showed them to the angels and said, "Inform Me of the names of these, if you are truthful."
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 32</span>
+                <div class="arabic-text">
+                    قَالُوا۟ سُبْحَٰنَكَ لَا عِلْمَ لَنَآ إِلَّا مَا عَلَّمْتَنَآ ۖ إِنَّكَ أَنتَ ٱلْعَلِيمُ ٱلْحَكِيمُ
+                </div>
+                <div class="english-text">
+                    They said, "Exalted are You; we have no knowledge except what You have taught us. Indeed, it is You who is the Knowing, the Wise."
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 33</span>
+                <div class="arabic-text">
+                    قَالَ يَٰٓـَٰدَمُ أَنۢبِئْهُم بِأَسْمَآئِهِمْ ۚ فَلَمَّا أَنۢبَأَهُم بِأَسْمَآئِهِمْ قَالَ أَلَمْ أَقُل لَّكُمْ إِنِّىٓ أَعْلَمُ غَيْبَ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضِ وَأَعْلَمُ مَا تُبْدُونَ وَمَا كُنتُمْ تَكْتُمُونَ
+                </div>
+                <div class="english-text">
+                    He said, "O Adam, inform them of their names." And when he had informed them of their names, Allah said, "Did I not tell you that I know the unseen [aspects] of the heavens and the earth? And I know what you reveal and what you have concealed."
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 34</span>
+                <div class="arabic-text">
+                    وَإِذْ قُلْنَا لِلْمَلَٰٓئِكَةِ ٱسْجُدُوا۟ لِآدَمَ فَسَجَدُوٓا۟ إِلَّآ إِبْلِيسَ أَبَىٰ وَٱسْتَكْبَرَ وَكَانَ مِنَ ٱلْكَٰفِرِينَ
+                </div>
+                <div class="english-text">
+                    And [mention] when We said to the angels, "Prostrate before Adam"; so they prostrated, except Iblis. He refused and was arrogant and became of the disbelievers.
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 35</span>
+                <div class="arabic-text">
+                    وَقُلْنَا يَٰٓـَٰدَمُ ٱسْكُنْ أَنتَ وَزَوْجُكَ ٱلْجَنَّةَ وَكُلَا مِنْهَا رَغَدًۭا حَيْثُ شِئْتُمَا وَلَا تَقْرَبَا هَٰذِهِ ٱلشَّجَرَةَ فَتَكُونَا مِنَ ٱلظَّٰلِمِينَ
+                </div>
+                <div class="english-text">
+                    And We said, "O Adam, dwell, you and your wife, in Paradise and eat therefrom in [ease and] abundance from wherever you will. But do not approach this tree, lest you be among the wrongdoers."
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 36</span>
+                <div class="arabic-text">
+                    فَأَزَلَّهُمَا ٱلشَّيْطَٰنُ عَنْهَا فَأَخْرَجَهُمَا مِمَّا كَانَا فِيهِ ۖ وَقُلْنَا ٱهْبِطُوا۟ بَعْضُكُمْ لِبَعْضٍ عَدُوٌّۭ ۖ وَلَكُمْ فِى ٱلْأَرْضِ مُسْتَقَرٌّۭ وَمَتَٰعٌ إِلَىٰ حِينٍ
+                </div>
+                <div class="english-text">
+                    So the Satan caused them to slip out of it and removed them from that [condition] in which they had been. And We said, "Go down, [all of you], as enemies to one another. And you will have upon the earth a place of settlement and provision for a time."
+                </div>
+            </div>
+
+            <div class="verse">
+                <span class="verse-number">Verse 37</span>
+                <div class="arabic-text">
+                    فَتَلَقَّىٰٓ ءَادَمُ مِن رَّبِّهِۦ كَلِمَٰتٍۢ فَتَابَ عَلَيْهِ ۚ إِنَّهُۥ هُوَ ٱلتَّوَّابُ ٱلرَّحِيمُ
+                </div>
+                <div class="english-text">
+                    Then Adam received from his Lord [some] words, and He accepted his repentance. Indeed, it is He who is the Accepting of repentance, the Merciful.
+                </div>
+            </div>
+        </div>
+
+        <div class="reflection-section">
+            <h2>💭 تأملات يومية | Daily Reflections</h2>
+            
+            <div class="reflection-point">
+                <h3>🌍 خلق السموات والأرض | Creation of Heavens and Earth</h3>
+                <div class="reflection-arabic">
+                    هو الذي خلق لكم ما في الأرض جميعاً! الله خلق كل شيء على الأرض لنا. كل الموارد والكنوز والخيرات خلقها الله لنا. ثم استوى إلى السماء فسواهن سبع سماوات - خلق السماوات السبع بكمال. وهو بكل شيء عليم - الله يعلم كل شيء. هذا خلق عظيم يستحق التأمل. نحن نرى السماوات الليل والنهار، لكننا لا نتأمل في عظمة هذا الخلق. كل شيء مُحكم ومُنظم بتمام الدقة. الأرض تدور، الأقمار تدور، كل شيء في توازن مثالي. هذا كله من قدرة الله وحكمته. الذي خلق كل هذا يستحق أن نعبده ونطيعه.
+                </div>
+                <div class="reflection-english">
+                    "It is He who created for you all that is on earth!" Allah created everything on earth for us. All resources, treasures, and bounties are created by Allah for us. "Then He directed Himself to the heaven, and made them seven heavens" - created the seven heavens perfectly. "And He is Knowing of all things" - Allah knows everything. This is a magnificent creation worthy of reflection. We see the heavens night and day, but we don't reflect on greatness of this creation. Everything is perfectly arranged and organized. Earth rotates, moons rotate, everything in perfect balance. This all from Allah's power and wisdom. The One who created all this deserves worship and obedience.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>👼 الملائكة والخليفة | The Angels and the Caliph</h3>
+                <div class="reflection-arabic">
+                    إني جاعل في الأرض خليفة! الله أخبر الملائكة أنه سيجعل خليفة على الأرض. من هو الخليفة؟ الإنسان! الإنسان سيخلف الله في تطبيق شريعته على الأرض. الملائكة استغربوا: أتجعل فيها من يفسد فيها ويسفك الدماء! لماذا استغربت الملائكة؟ لأنهم كانوا يرون أن الإنسان بطبيعته يفسد. لكن الله أعلم - قال الله إني أعلم ما لا تعلمون. الله يعلم أن الإنسان بإمكانه أن يكون صالحاً عابداً طائعاً. الإنسان فيه إمكانية الخير والشر، وبالاختيار والإرادة يختار طريقه. الله اختار الإنسان ليكون خليفة لحكمة في ذلك. الخلافة في الأرض أمانة عظيمة من الله.
+                </div>
+                <div class="reflection-english">
+                    "Indeed, I will make upon the earth a successive authority!" Allah informed angels He will make a caliph on earth. Who is the caliph? Humanity! Human will succeed Allah in applying His law on earth. Angels were astonished: "Will You place upon it one who causes corruption and sheds blood!" Why were angels surprised? Because they saw humans by nature corrupt. But Allah knows best - "I know that which you do not know." Allah knows humans can be righteous, worshipping, obedient. Humans have potential for good and evil, and by choice and will choose their path. Allah chose humans to be caliphs for wisdom in that. Caliphate on earth is great trust from Allah.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>📚 علم آدم الأسماء | Adam Taught the Names</h3>
+                <div class="reflection-arabic">
+                    وعلم آدم الأسماء كلها! الله علّم آدم الأسماء - معاني الأشياء وحقائقها. هذا العلم مصدر فضيلة الإنسان على الملائكة. الملائكة أفضل من الإنسان في الطاعة، لكن الإنسان أفضل في العلم. العلم هو ما يميز الإنسان. ثم عرضهم على الملائكة - الله اختبر الملائكة: أنبئوني بأسماء هؤلاء. الملائكة لم يعرفوا: سبحانك لا علم لنا إلا ما علمتنا. الملائكة اعترفوا بنقص علمهم! ثم أخبر آدم يا آدم أنبئهم بأسمائهم. آدم أخبرهم! هذا دليل على فضل آدم والإنسان. الإنسان أوتي العلم الذي لم تؤته الملائكة. هذا العلم هو مسؤولية على الإنسان - يجب أن يستخدمه بشكل صحيح.
+                </div>
+                <div class="reflection-english">
+                    "And He taught Adam the names - all of them!" Allah taught Adam the names - meanings and realities of things. This knowledge is source of humanity's superiority over angels. Angels are superior in obedience, but humans superior in knowledge. Knowledge is what distinguishes humanity. "Then He showed them to the angels" - Allah tested angels: Inform Me of names of these. Angels didn't know: "We have no knowledge except what You have taught us." Angels admitted their knowledge deficiency! Then He said to Adam, "O Adam, inform them of their names." Adam informed them! This evidence of Adam's and humanity's merit. Humans were given knowledge not given to angels. This knowledge is responsibility on humans - must use it correctly.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>🙏 السجود والعصيان | Prostration and Disobedience</h3>
+                <div class="reflection-arabic">
+                    واذ قلنا للملائكة اسجدوا لآدم فسجدوا! الله أمر الملائكة أن يسجدوا لآدم تعظيماً له وتكريماً. جميع الملائكة سجدوا - امتثلوا أمر الله فوراً. إلا إبليس أبى واستكبر - إبليس رفض! لماذا؟ لأنه استكبر وتكبر عن السجود. قال الله: أنا خير منه خلقت من نار وخلق من طين! اعتراض على حكمة الله وأمره. كان من الكافرين - إبليس كفر بأمر الله. هذا هو الفرق بين الملائكة وإبليس. الملائكة لم تفكر في الحكمة أو السبب، بل امتثلت الأمر فوراً. إبليس فكر وعارض وكبّر نفسه. الطاعة العمياء لله هي الأمان، والتفكير والاعتراض يؤدي إلى الهلاك.
+                </div>
+                <div class="reflection-english">
+                    "And [mention] when We said to the angels, 'Prostrate before Adam'; so they prostrated!" Allah commanded angels to prostrate before Adam honoring him. All angels prostrated - obeyed Allah's command immediately. "Except Iblis. He refused and was arrogant" - Iblis refused! Why? Because he was arrogant. He said: I am better than him, I was created from fire and he was created from clay! Objection to Allah's wisdom and command. "And became of the disbelievers" - Iblis disbelieved in Allah's command. This is difference between angels and Iblis. Angels didn't think about wisdom or reason, just obeyed immediately. Iblis thought and objected and exalted himself. Blind obedience to Allah is safety, thinking and objecting leads to destruction.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>🌳 الجنة والامتحان | Paradise and the Test</h3>
+                <div class="reflection-arabic">
+                    اسكن أنت وزوجك الجنة! الله أسكن آدم وحواء الجنة. الجنة مكان النعيم والراحة والأمان. كلا منها رغداً - كلا منها برغبة وراحة حيث شاء. ولا تقربا هذه الشجرة - لكن هناك امتحان وابتلاء! حتى في الجنة هناك امتحان. الحياة كلها امتحان - الإنسان مختبر في كل مكان: في الجنة، في الأرض، في كل حالاته. فتكونا من الظالمين - إذا اقتربتما منها تكونان ظالمين لأنفسكما. الظلم يشمل ظلم الإنسان لنفسه. من يعصي الله يظلم نفسه. الامتحان سهل - شجرة واحدة ممنوعة والباقي حلال. لكن الإنسان ضعيف - قد يقع في الامتحان.
+                </div>
+                <div class="reflection-english">
+                    "Dwell, you and your wife, in Paradise!" Allah made Adam and Eve dwell in Paradise. Paradise is place of bliss, comfort and safety. "Eat therefrom in [ease] and abundance" - eat from it in ease and abundance wherever you wish. "But do not approach this tree" - but there's test and trial! Even in Paradise there's test. All life is test - humans tested everywhere: in Paradise, on earth, in all conditions. "Lest you be among the wrongdoers" - if you approach it you are wrongdoers to yourselves. Wrongdoing includes human wronging themselves. Whoever disobeys Allah wrongs himself. Test was simple - one tree forbidden, rest lawful. But humans are weak - may fall in test.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>😈 الخروج من الجنة | Expulsion from Paradise</h3>
+                <div class="reflection-arabic">
+                    فأزلهما الشيطان عنها! الشيطان أضل آدم وحواء - أغواهما وأضلهما عن الطريق. فأخرجهما مما كانا فيه - أخرجهما من الجنة. بسبب معصية واحدة أخرج الله آدم وحواء من الجنة! درس عظيم في قوة العصيان وخطورة المعصية. قلنا اهبطوا بعضكم لبعض عدو - الآن أنتم أعداء لبعضكم! الصراع الإنساني، الحروب، الخصومات - كل هذا من بعد المعصية. ولكم في الأرض مستقر ومتاع إلى حين - أعطاهم الأرض ليسكنوا فيها وينتفعوا بها. لكن هذا إلى حين - الأرض ليست دار الخلود، الجنة هي الخلود.
+                </div>
+                <div class="reflection-english">
+                    "So the Satan caused them to slip out of it!" Satan misguided Adam and Eve - seduced and misled them. "And removed them from that condition in which they had been" - removed them from Paradise. Because of one disobedience Allah expelled Adam and Eve from Paradise! Great lesson in power of disobedience and danger of sin. "We said, 'Go down, [all of you], as enemies to one another!'" - now you are enemies to each other! Human conflict, wars, disputes - all from after disobedience. "And you will have upon the earth a place of settlement and provision for a time" - gave them earth to dwell and benefit from it. But this is temporary - earth not eternal abode, Paradise is eternity.
+                </div>
+            </div>
+
+            <div class="reflection-point">
+                <h3>🕊️ التوبة والمغفرة | Repentance and Forgiveness</h3>
+                <div class="reflection-arabic">
+                    فتلقى آدم من ربه كلمات فتاب عليه! آدم لم يستسلم للاستيعاب واليأس! آدم طلب المغفرة من الله. تلقى كلمات من ربه - دعاء كلمات توسل إلى الله. فتاب عليه - قبل الله توبة آدم! هذا يعطينا أمل عظيم - حتى بعد أعظم ذنب (إخراج آدم من الجنة)، الله يقبل التوبة. إنه هو التواب الرحيم - الله كثير التوبة رحيم. الطريق دائماً مفتوح للتوبة والمغفرة. الإنسان قد يقع ويخطيء، لكن التوبة والرجوع إلى الله يحل كل شيء. هذا هو الأمل الذي يجب أن نحمله في قلوبنا. مهما عظم الذنب، ما دام الإنسان يتوب، فالله يقبل توبته. أمل عظيم في رحمة الله!
+                </div>
+                <div class="reflection-english">
+                    "Then Adam received from his Lord [some] words, and He accepted his repentance!" Adam didn't surrender to despair! Adam sought forgiveness from Allah. "Received from his Lord [some] words" - words of supplication, beseeching Allah. "He accepted his repentance" - Allah accepted Adam's repentance! This gives us great hope - even after greatest sin (expulsion from Paradise), Allah accepts repentance. "Indeed, it is He who is the Accepting of repentance, the Merciful!" - Allah is oft-forgiving, merciful. Door is always open for repentance and forgiveness. Humans may fall and sin, but repentance and return to Allah solves everything. This is hope we must carry in hearts. No matter how great the sin, as long as person repents, Allah accepts. Great hope in Allah's mercy!
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-text">
+                "فَتَلَقَّىٰٓ ءَادَمُ مِن رَّبِّهِۦ كَلِمَٰتٍۢ فَتَابَ عَلَيْهِ ۚ إِنَّهُۥ هُوَ ٱلتَّوَّابُ ٱلرَّحِيمُ"
+            </div>
+            <div class="footer-text">
+                "Then Adam received from his Lord [some] words, and He accepted his repentance. Indeed, it is He who is the Accepting of repentance, the Merciful."
+            </div>
+            <div class="footer-text">
+                May this daily reflection bring us closer to Allah and increase our understanding of His words
+            </div>
+            <div class="footer-text">
+                🤲 آمين يا رب العالمين | Ameen Ya Rabb Al-Alameen 🤲
+            </div>
+        </div>
+
+        <div class="signature">
+            <div class="signature-header">Designed and Coded by</div>
+            <div class="signature-content">
+                <img src="https://balancedlifeharmony-spec.github.io/signature-/profile.jpg" alt="Emhemed Elahresh" class="signature-profile" onerror="this.style.display='none'">
+                <div class="signature-info">
+                    <div class="signature-name">Emhemed Elahresh</div>
+                    <div class="signature-company">Victory Hour Media</div>
+                    <div class="signature-description">
+                        Creating impactful digital experiences and media solutions. Every project is crafted with attention to detail and user experience in mind.
+                    </div>
+                    <div class="signature-buttons">
+                        <a href="mailto:contact@example.com" class="signature-btn">Email</a>
+                        <a href="https://balancedlifeharmony-spec.github.io/signature-/" target="_blank" class="signature-btn">Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class="signature-copyright">© 2025 Emhemed Elahresh. All rights reserved.</div>
+        </div>
+    </div>
+
+    <script>
+        const audioElement = document.getElementById('quranAudio');
+        const audioSource = document.getElementById('audioSource');
+        let currentVerse = 29;
+        let isContinuousMode = false;
+
+        const verseUrls = {
+            29: 'https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002029.mp3',
+            30: 'https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002030.mp3',
+            31: 'https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002031.mp3',
+            32: 'https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002032.mp3',
+            33: 'https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002033.mp3',
+            34: 'https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002034.mp3',
+            35: 'https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002035.mp3',
+            36: 'https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002036.mp3',
+            37: 'https://everyayah.com/data/Abdul_Basit_Murattal_192kbps/002037.mp3'
+        };
+
+        function playVerse(verseNumber) {
+            const buttons = document.querySelectorAll('.verse-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
+
+            currentVerse = verseNumber;
+            isContinuousMode = false;
+            audioSource.src = verseUrls[verseNumber];
+            audioElement.load();
+            audioElement.play();
+        }
+
+        function playAllVerses() {
+            isContinuousMode = true;
+            currentVerse = 29;
+            loadAndPlayVerse(29);
+        }
+
+        function loadAndPlayVerse(verseNumber) {
+            if (verseNumber > 37) {
+                isContinuousMode = false;
+                return;
+            }
+
+            const buttons = document.querySelectorAll('.verse-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            buttons[verseNumber - 29].classList.add('active');
+
+            audioSource.src = verseUrls[verseNumber];
+            audioElement.load();
+            audioElement.play();
+            currentVerse = verseNumber;
+        }
+
+        // Auto-play next verse when current one ends
+        audioElement.addEventListener('ended', function() {
+            if (isContinuousMode && currentVerse < 37) {
+                currentVerse++;
+                loadAndPlayVerse(currentVerse);
+            }
+        });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.code === 'Space') {
+                e.preventDefault();
+                if (audioElement.paused) {
+                    audioElement.play();
+                } else {
+                    audioElement.pause();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
